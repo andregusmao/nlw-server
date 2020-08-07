@@ -18,6 +18,8 @@ export default class ConnectionController {
                 user_id
             });
 
+            await trx.commit();
+
             return response.status(201).send()
         } catch (err) {
             trx.rollback();
